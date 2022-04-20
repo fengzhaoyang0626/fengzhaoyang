@@ -20,20 +20,21 @@ public class UserHandler {
     /*查询所有所有用户*/
     @GetMapping("/findAll")
     @ResponseBody
-    public AllVO findAll(@RequestParam("page") Integer page, @RequestParam("limit") Integer limit){
-        Integer index = (page-1)*limit;
-        return new AllVO(0,"",userFeign.count(),userFeign.findAll(index, limit));
+    public AllVO findAll(@RequestParam("page") Integer page, @RequestParam("limit") Integer limit) {
+        Integer index = (page - 1) * limit;
+        return new AllVO(0, "", userFeign.count(), userFeign.findAll(index, limit));
     }
 
     /*用户添加*/
     @PostMapping("/save")
-    public String usersave(User user){
+    public String usersave(User user) {
         userFeign.save(user);
         return "redirect:/user_manage.html";
     }
+
     //用户删除
     @GetMapping("/deleteById/{id}")
-    public String deleteById(@PathVariable("id") long id){
+    public String deleteById(@PathVariable("id") long id) {
         userFeign.deleteById(id);
         return "redirect:/user_manage.html";
     }

@@ -16,7 +16,7 @@ import java.util.List;
 public interface UserFeign {
     //查询所有用户信息
     @GetMapping("/user/findAll/{index}/{limit}")
-    List < User > findAll(@PathVariable("index")Integer index, @PathVariable("limit")Integer limit);
+    List<User> findAll(@PathVariable("index") Integer index, @PathVariable("limit") Integer limit);
 
     //查询信息数目
     @GetMapping("/user/count")

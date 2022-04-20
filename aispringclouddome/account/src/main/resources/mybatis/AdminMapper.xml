@@ -3,6 +3,6 @@
 <mapper namespace="com.snowy.southwind.dao.AdminMapper">
 
     <select id="adminLogin" resultType="Admin">
-		select id,username from t_admin where username=#{username} and password=#{password};
-	</select>
+        select id,username from t_admin where username=#{username} and password=#{password};
+    </select>
 </mapper>

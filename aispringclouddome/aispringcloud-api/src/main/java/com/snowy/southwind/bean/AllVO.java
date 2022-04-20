@@ -22,5 +22,4 @@ public class AllVO {
     private List data;
 
 
-
 }

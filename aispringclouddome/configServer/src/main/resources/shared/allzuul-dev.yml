@@ -16,9 +16,9 @@ eureka:
 
 zuul:
   routes:
-#    eureka-ribbon: #对应服务名称,可以自定义（最好保持一致）
-#      path: /ribbon/*
-#      serviceId: eureka-ribbon #对应服务名称
+    #    eureka-ribbon: #对应服务名称,可以自定义（最好保持一致）
+    #      path: /ribbon/*
+    #      serviceId: eureka-ribbon #对应服务名称
     eureka-feign:
       path: /Takeaway/*
       serviceId: allclient #对应服务名称

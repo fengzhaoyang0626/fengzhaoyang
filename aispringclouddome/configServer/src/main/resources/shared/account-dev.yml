@@ -9,8 +9,8 @@ spring:
     name: account
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://127.0.0.1:3306/orderingsystem?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    password: 111111
+    url: jdbc:mysql://localhost:3306/bbb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 eureka:

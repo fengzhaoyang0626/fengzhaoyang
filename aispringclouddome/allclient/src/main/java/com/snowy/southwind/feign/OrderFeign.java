@@ -18,7 +18,7 @@ public interface OrderFeign {
 
     /*根据用户id查询订单*/
     @GetMapping("/order/findAllByUid/{uid}/{index}/{limit}")
-    List <Order> findAllByUid(@PathVariable("uid")long uid, @PathVariable("index")int index, @PathVariable("limit")int limit);
+    List<Order> findAllByUid(@PathVariable("uid") long uid, @PathVariable("index") int index, @PathVariable("limit") int limit);
 
     /*根据用户查询订单数量*/
     @GetMapping("/order/countByUid/{uid}")
@@ -26,7 +26,7 @@ public interface OrderFeign {
 
     /*根据订单状态查询所有*/
     @GetMapping("/order/findAllByState/{index}/{limit}")
-    List<Order> findAllByState(@PathVariable("index")int index,@PathVariable("limit")int limit);
+    List<Order> findAllByState(@PathVariable("index") int index, @PathVariable("limit") int limit);
 
     /*根据订单状态查询条数*/
     @GetMapping("/order/countByState")
@@ -34,5 +34,5 @@ public interface OrderFeign {
 
     /*修改订单状态*/
     @PutMapping("/order/updateState/{id}/{aid}")
-    void updateState(@PathVariable("id")long id,@PathVariable("aid")long aid);
+    void updateState(@PathVariable("id") long id, @PathVariable("aid") long aid);
 }

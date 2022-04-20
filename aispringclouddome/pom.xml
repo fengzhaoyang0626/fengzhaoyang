@@ -17,6 +17,11 @@
         <module>account</module>
         <module>order</module>
         <module>allzuul</module>
+        <module>demo</module>
+        <module>hystrix</module>
+        <module>hystrixa</module>
+        <module>turbine</module>
+        <module>zuul</module>
     </modules>
     <packaging>pom</packaging>
 

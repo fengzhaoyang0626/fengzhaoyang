@@ -16,6 +16,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     //用户拦截器
     @Resource
     private LoginHandlerInterceptor LoginHandlerInterceptor;
+
     //解禁静态资源调取
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -25,9 +26,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //添加要拦截的url                                拦截的路径
-        registry.addInterceptor(LoginHandlerInterceptor).addPathPatterns("/**","/*.html")
+        registry.addInterceptor(LoginHandlerInterceptor).addPathPatterns("/**", "/*.html")
                 // 放行的路径
-                .excludePathPatterns("/login.html","/account/**","/images/**","/js/**","/layui/**");
+                .excludePathPatterns("/login.html", "/account/**", "/images/**", "/js/**", "/layui/**");
     }
 
 

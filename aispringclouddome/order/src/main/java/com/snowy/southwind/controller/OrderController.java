@@ -22,38 +22,39 @@ public class OrderController {
     //用户范围
     /*保存订单*/
     @PostMapping("/save")
-    public void orderSave(@RequestBody Order order){
+    public void orderSave(@RequestBody Order order) {
         order.setDate(new Date());
         orderMapper.save(order);
     }
 
     /*根据用户id查询订单*/
     @GetMapping("/findAllByUid/{uid}/{index}/{limit}")
-    public List<Order> findAllByUid(@PathVariable("uid")long uid,@PathVariable("index")int index,@PathVariable("limit")int limit){
+    public List<Order> findAllByUid(@PathVariable("uid") long uid, @PathVariable("index") int index, @PathVariable("limit") int limit) {
         return orderMapper.findAllByUid(uid, index, limit);
     }
 
     /*根据用户查询订单数量*/
     @GetMapping("/countByUid/{uid}")
-    public int countByUid(@PathVariable("uid") long uid){
-       return orderMapper.countByUid(uid);
+    public int countByUid(@PathVariable("uid") long uid) {
+        return orderMapper.countByUid(uid);
     }
 
     //管理员范围
     /*根据订单状态查询所有*/
     @GetMapping("/findAllByState/{index}/{limit}")
-    public List<Order> findAllByState(@PathVariable("index")int index,@PathVariable("limit")int limit){
+    public List<Order> findAllByState(@PathVariable("index") int index, @PathVariable("limit") int limit) {
         return orderMapper.findAllByState(index, limit);
     }
+
     /*根据订单状态查询条数*/
     @GetMapping("/countByState")
-    public int countByState(){
+    public int countByState() {
         return orderMapper.countByState();
     }
 
     /*修改订单状态*/
     @PutMapping("/updateState/{id}/{aid}")
-    public void updateState(@PathVariable("id")long id,@PathVariable("aid")long aid){
-        orderMapper.updateState(id,aid);
+    public void updateState(@PathVariable("id") long id, @PathVariable("aid") long aid) {
+        orderMapper.updateState(id, aid);
     }
 }

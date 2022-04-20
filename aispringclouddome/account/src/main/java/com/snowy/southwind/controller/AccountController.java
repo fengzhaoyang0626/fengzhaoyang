@@ -25,13 +25,13 @@ public class AccountController {
 
     //用户登录
     @GetMapping("/userlogin/{username}/{password}")
-    public User userLogin(@PathVariable("username") String username, @PathVariable("password") String password){
-        return userMappero.userLogin(username,password);
+    public User userLogin(@PathVariable("username") String username, @PathVariable("password") String password) {
+        return userMappero.userLogin(username, password);
     }
 
     //管理员登录
     @GetMapping("/adminlogin/{username}/{password}")
-    public Admin adminLogin(@PathVariable("username") String username, @PathVariable("password") String password){
-        return adminMapper.adminLogin(username,password);
+    public Admin adminLogin(@PathVariable("username") String username, @PathVariable("password") String password) {
+        return adminMapper.adminLogin(username, password);
     }
 }

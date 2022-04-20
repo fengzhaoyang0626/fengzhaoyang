@@ -12,11 +12,16 @@ import java.util.List;
  */
 @Repository
 public interface MenuMapper {
-    List< Menu > findAll(Integer index, Integer limit);
+    List<Menu> findAll(Integer index, Integer limit);
+
     Integer count();
+
     Menu findById(long id);
+
     void save(Menu menu);
+
     void update(Menu menu);
+
     void deleteById(long id);
 
 }

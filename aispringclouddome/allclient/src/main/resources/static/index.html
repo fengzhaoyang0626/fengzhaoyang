@@ -10,7 +10,10 @@
 <div class="layui-container" style="width: 700px;height: 600px;margin-top: 0px;padding-top: 60px;">
 
     <div style="margin-left: 460px; width: 200px;">
-        欢迎回来！<a href="order.html" id="nickname"></a><a href="/account/logout/user">&nbsp;&nbsp;&nbsp;<button class="layui-btn layui-btn-warm layui-btn-radius">退出</button></a>
+        欢迎回来！<a href="order.html" id="nickname"></a><a href="/account/logout/user">&nbsp;&nbsp;&nbsp;<button
+            class="layui-btn layui-btn-warm layui-btn-radius">退出
+    </button>
+    </a>
     </div>
 
     <table class="layui-hide" id="test" lay-filter="test"></table>
@@ -23,7 +26,7 @@
     <a class="layui-btn layui-btn-xs" lay-event="order">订购</a>
 </script>
 <script src="js/jquery-3.3.1.min.js"></script>
-<script  src="layui/layui.js" charset="utf-8"></script>
+<script src="layui/layui.js" charset="utf-8"></script>
 <script>
     /*获取名称*/
     $.ajax({
@@ -71,6 +74,7 @@
             }
         });
     });
+
 </script>
 <script>
     //二级菜单联动
@@ -78,4 +82,5 @@
         var element = layui.element;
 
     });
+
 </script>

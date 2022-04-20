@@ -14,6 +14,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @MapperScan("com.snowy.southwind.dao")
 public class MenuApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MenuApplication.class,args);
+        SpringApplication.run(MenuApplication.class, args);
     }
 }

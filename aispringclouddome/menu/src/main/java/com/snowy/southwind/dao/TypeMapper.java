@@ -12,5 +12,6 @@ import java.util.List;
 @Repository
 public interface TypeMapper {
     Type findById(Integer id);
+
     List<Type> findAll();
 }

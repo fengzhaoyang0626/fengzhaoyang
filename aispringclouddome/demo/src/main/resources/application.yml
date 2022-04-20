@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: fzy
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/bbb?useUnicode=true&characterEncoding=utf-8
+#    username: root
+#    password: 111111
+  datasource:
+    username: root
+    password: 111111
+    url: jdbc:mysql://localhost:3306/bbb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath*:xml/*Mapper.xml
+server:
+  port: 9090
+feign:
+  hystrix:
+    enabled: ture
+
+
+#eureka:
+#  instance:
+#    instance-id:fzy
+#    lease-renewal-interval-in-seconds: 2
+#    lease-expiration-duration-in-seconds:10
+#    prefer-ip-address:true
+#  client:
+#    service-url:
+#      defaultZone:http://localhost:8761/eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance-id: demo-9111
+  instance:
+    lease-renewal-interval-in-seconds: 2
+    prefer-ip-address: true
+    instance-id=34-springcloud-service-goods: fzy
+    lease-expiration-duration-in-seconds: 10

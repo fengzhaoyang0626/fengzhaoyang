@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface AdminMapper {
-    Admin adminLogin(@Param("username")String username, @Param("password")String password);
+    Admin adminLogin(@Param("username") String username, @Param("password") String password);
 }

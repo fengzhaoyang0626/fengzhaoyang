@@ -22,21 +22,21 @@ public class LoginHandle {
     private AccountFeign accountFeign;
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("type") String type, HttpSession session){
-        String result =null;
-        if (type==null){
-            result ="redirect:/login.html";
-        }else {
-            switch (type){
+    public String login(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("type") String type, HttpSession session) {
+        String result = null;
+        if (type == null) {
+            result = "redirect:/login.html";
+        } else {
+            switch (type) {
                 case "user":
-                    User user = accountFeign.userLogin(username,password);
-                    session.setAttribute("user",user);
-                    result ="redirect:/index.html";
+                    User user = accountFeign.userLogin(username, password);
+                    session.setAttribute("user", user);
+                    result = "redirect:/index.html";
                     break;
                 case "admin":
-                    Admin admin = accountFeign.adminLogin(username,password);
-                    session.setAttribute("admin",admin);
-                    result="redirect:/main.html";
+                    Admin admin = accountFeign.adminLogin(username, password);
+                    session.setAttribute("admin", admin);
+                    result = "redirect:/main.html";
                     break;
             }
         }
@@ -45,15 +45,15 @@ public class LoginHandle {
 
     @GetMapping("/allname")
     @ResponseBody
-    public Msg redirect(HttpSession session){
+    public Msg redirect(HttpSession session) {
         User user = (User) session.getAttribute("user");
         Admin admin = (Admin) session.getAttribute("admin");
-        return Msg.success().add("user",user).add("admin",admin);
+        return Msg.success().add("user", user).add("admin", admin);
     }
 
     @GetMapping("/logout/{type}")
-    public String logout(@PathVariable("type")String type,HttpSession session){
-        switch (type){
+    public String logout(@PathVariable("type") String type, HttpSession session) {
+        switch (type) {
             case "user":
                 session.removeAttribute("user");
                 break;
@@ -63,7 +63,6 @@ public class LoginHandle {
         }
         return "redirect:/login.html";
     }
-
 
 
 }

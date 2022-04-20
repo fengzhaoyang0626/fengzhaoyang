@@ -21,14 +21,14 @@ public class MenuHandler {
     /*查询所有菜品数据*/
     @GetMapping("/findAll")
     @ResponseBody
-    public AllVO findAll(@RequestParam("page") Integer page, @RequestParam("limit") Integer limit){
-        Integer index = (page-1)*limit;
-        return new AllVO(0,"",menuFeign.count(),menuFeign.findAll(index, limit));
+    public AllVO findAll(@RequestParam("page") Integer page, @RequestParam("limit") Integer limit) {
+        Integer index = (page - 1) * limit;
+        return new AllVO(0, "", menuFeign.count(), menuFeign.findAll(index, limit));
     }
 
     /*删除meno某个菜品*/
     @GetMapping("/deleteById/{id}")
-    public String deleteById(@PathVariable("id") Integer id){
+    public String deleteById(@PathVariable("id") Integer id) {
         menuFeign.deleteById(id);
         return "redirect:/menu_manage.html";
     }
@@ -36,28 +36,30 @@ public class MenuHandler {
     /*查询当个菜品信息*/
     @GetMapping("/findById/{id}")
     @ResponseBody
-    public Msg findById(@PathVariable("id")Integer id){
-        return  Msg.success().add("oneMenu",menuFeign.findById(id));
+    public Msg findById(@PathVariable("id") Integer id) {
+        return Msg.success().add("oneMenu", menuFeign.findById(id));
     }
 
     /*查询所有菜品类型*/
     @GetMapping("/typeFindAll")
     @ResponseBody
-    public Msg TfindById(){
-        return Msg.success().add("types",menuFeign.TfindById());
-    };
+    public Msg TfindById() {
+        return Msg.success().add("types", menuFeign.TfindById());
+    }
+
+    ;
 
     /*修改菜品*/
     @PutMapping("/update/{id}")
     @ResponseBody
-    public Msg update(@PathVariable("id")long id,Menu menu){
-            menuFeign.Mupdate(id,menu);
-            return Msg.success();
+    public Msg update(@PathVariable("id") long id, Menu menu) {
+        menuFeign.Mupdate(id, menu);
+        return Msg.success();
     }
 
     //添加菜品
     @PostMapping("/save")
-    public String save(Menu menu){
+    public String save(Menu menu) {
         menuFeign.save(menu);
         return "redirect:/menu_manage.html";
     }

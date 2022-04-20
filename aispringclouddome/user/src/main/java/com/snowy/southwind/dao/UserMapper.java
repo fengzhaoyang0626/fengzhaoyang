@@ -12,8 +12,11 @@ import java.util.List;
  */
 @Repository
 public interface UserMapper {
-    List < User > findAll(Integer index, Integer limit);
+    List<User> findAll(Integer index, Integer limit);
+
     Integer count();
+
     void save(User user);
+
     void deleteById(long id);
 }
